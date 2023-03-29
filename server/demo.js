@@ -10,7 +10,7 @@ function timeout(ms) {
 }
 
 exports.handler = async (event, context) => {
-  // console.log('--------------')
+  console.log('--------------')
   try {
     await mongoose.connect(process.env.MONGODB_URI_DEPLOYC, {
       useNewUrlParser: true,
@@ -23,7 +23,8 @@ exports.handler = async (event, context) => {
     const params = new URLSearchParams(event.body);
     const name = decodeURIComponent(params.get('name'));
     const email = decodeURIComponent(params.get('email'));
-    const phone = decodeURIComponent(params.get('pnumber'));
+    // const phone = decodeURIComponent(params.get('pnumber'));
+    const phone = "+1435434534"
     const companyName = decodeURIComponent(params.get('cname'));
 
     const options1 = {
