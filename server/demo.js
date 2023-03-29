@@ -10,7 +10,7 @@ function timeout(ms) {
 }
 
 exports.handler = async (event, context) => {
-  console.log('--------------')
+  // console.log('--------------')
   try {
     await mongoose.connect(process.env.MONGODB_URI_DEPLOYC, {
       useNewUrlParser: true,
@@ -70,7 +70,7 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 301,
-      headers: { Location: '/calendar.html' }
+      headers: { Location: '/schedule-appointment.html' }
     }
   } catch (error) {
     console.error(error);
