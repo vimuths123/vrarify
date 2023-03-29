@@ -23,8 +23,7 @@ exports.handler = async (event, context) => {
     const params = new URLSearchParams(event.body);
     const name = decodeURIComponent(params.get('name'));
     const email = decodeURIComponent(params.get('email'));
-    // const phone = decodeURIComponent(params.get('pnumber'));
-    const phone = "+1435434534"
+    const phone = decodeURIComponent(params.get('pnumber'));
     const companyName = decodeURIComponent(params.get('cname'));
 
     const options1 = {
