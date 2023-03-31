@@ -18,6 +18,7 @@ export const handler = async () => {
     // const expirationTime = currentTime + (60 * 60 * 1000 * 12);
     const expirationTime = currentTime + (1 * 60 * 1000);
     console.log(expirationTime)
+    console.log(tokenData.expire)
 
     if (new Date().getTime() > tokenData.expire) {
       console.log('Token expired.');
