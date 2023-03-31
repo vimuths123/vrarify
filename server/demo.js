@@ -10,7 +10,6 @@ function timeout(ms) {
 }
 
 exports.handler = async (event, context) => {
-  console.log('--------------')
   try {
     await mongoose.connect(process.env.MONGODB_URI_DEPLOYC, {
       useNewUrlParser: true,

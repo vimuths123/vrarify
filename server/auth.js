@@ -14,12 +14,14 @@ export const handler = async () => {
 
     const tokenData = await TokenData.findById(process.env.MONGO_TOKEN_ID);
 
+    const currentTime = new Date().getTime();
+    // const expirationTime = currentTime + (60 * 60 * 1000 * 12);
+    const expirationTime = currentTime + (1 * 60 * 1000);
+
     if (new Date().getTime() > tokenData.expire) {
       console.log('Token expired.');
 
-      const currentTime = new Date().getTime();
-      const expirationTime = currentTime + (60 * 60 * 1000 * 12);
-      // const expirationTime = currentTime + (1 * 60 * 1000);
+
 
       const options = {
         method: 'POST',
