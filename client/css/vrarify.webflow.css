@@ -7,10 +7,10 @@
 }
 
 .hero {
-  background-image: url('../images/Group-1000004456.png');
-  background-position: 50% 50%;
-  background-size: auto;
-  background-repeat: no-repeat;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/Group-1000004456.png');
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, auto;
+  background-repeat: repeat, no-repeat;
 }
 
 .brand {
@@ -257,7 +257,7 @@
 }
 
 .div-block-3 {
-  width: 50%;
+  width: 80%;
 }
 
 .heading {
@@ -332,7 +332,7 @@
   border-radius: 10px;
   background-color: rgba(61, 66, 124, 0.5);
   -webkit-backdrop-filter: blur(25px);
-  backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
 }
 
 .heading-2 {
@@ -423,14 +423,14 @@
   height: 100%;
   border-radius: 10px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .image-2 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .testimonial-wrapper {
@@ -794,7 +794,7 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .div-block-18 {
@@ -1313,6 +1313,10 @@
 
   .hero-wrapper {
     height: 85%;
+  }
+
+  .div-block-3 {
+    width: 50%;
   }
 
   .body-wrapper.min-height-90ch {
@@ -2030,7 +2034,7 @@
 
   .image-9 {
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
   }
 }
 
@@ -2040,4 +2044,8 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+.input-filed.phone-number::placeholder{
+  color: grey;
 }
