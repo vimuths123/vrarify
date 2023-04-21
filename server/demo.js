@@ -10,6 +10,7 @@ function timeout(ms) {
 }
 
 exports.handler = async (event, context) => {
+
   try {
     await mongoose.connect(process.env.MONGODB_URI_DEPLOYC, {
       useNewUrlParser: true,
@@ -18,7 +19,8 @@ exports.handler = async (event, context) => {
     })
 
     const tokenData = await TokenData.findById(process.env.MONGO_TOKEN_ID);
-
+    
+    // console.log(tokenData)
     const params = new URLSearchParams(event.body);
     const name = decodeURIComponent(params.get('name'));
     const email = decodeURIComponent(params.get('email'));
@@ -72,12 +74,17 @@ exports.handler = async (event, context) => {
       headers: { Location: '/schedule-appointment.html' }
     }
   } catch (error) {
-    console.error(error);
+    console.log(error.response.data.message)
+    // console.error(error);
+    // console.error(error);
     mongoose.disconnect();
-    
+
+    const referer = event.headers.referer;
     return {
-      statusCode: 400,
-      body: '',
+      statusCode: 302,
+      headers: {
+        Location: referer+'?error='+error.response.data.message
+      }
     }
   }
 }
