@@ -14,6 +14,7 @@ console.log(success_url);
 console.log(payment_options);
 
 
+
 exports.handler = async (event, context) => {
     const requestBody = JSON.parse(event.body);
     const { trial_days, lookupkey } = requestBody;
