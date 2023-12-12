@@ -16,13 +16,13 @@ console.log('ddd')
 
 
 exports.handler = async (event, context) => {
-    const requestBody = JSON.parse(event.body);
-    const { trial_days, lookupkey } = requestBody;
+    // const requestBody = JSON.parse(event.body);
+    // const { trial_days, lookupkey } = requestBody;
 
-    const prices = await stripe.prices.list({
-        lookup_keys: [lookupkey],
-        expand: ['data.product'],
-    });
+    // const prices = await stripe.prices.list({
+    //     lookup_keys: [lookupkey],
+    //     expand: ['data.product'],
+    // });
 
     // try {
     //     if (trial_days == 0) {
