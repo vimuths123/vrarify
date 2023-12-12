@@ -9,13 +9,9 @@ const success_url = process.env.SUCCESS_URL;
 const cancel_url = process.env.SUCCESS_URL;
 const payment_options = process.env.PAYMENT_OPTIONS.split(',')
 
-console.log('ddd')
-console.log(success_url);
-console.log(payment_options);
-console.log('ddd')
-
 
 exports.handler = async (event, context) => {
+    console.log(stripe);
 
     try {
         const requestBody = JSON.parse(event.body);
