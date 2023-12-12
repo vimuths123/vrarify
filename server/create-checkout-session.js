@@ -17,15 +17,32 @@ console.log('ddd')
 
 exports.handler = async (event, context) => {
 
-    const requestBody = JSON.parse(event.body);
-    const { trial_days, lookupkey } = requestBody;
+    try {
+        const requestBody = JSON.parse(event.body);
+        const { trial_days, lookupkey } = requestBody;
 
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            url: 'ddd',
-        }),
-    };
+        const prices = await stripe.prices.list({
+            lookup_keys: [lookupkey],
+            expand: ['data.product'],
+        });
+
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                url: 'ddd',
+            }),
+        };
+    } catch (e) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({
+                error: e.message,
+            }),
+        };
+    }
+
+
 
     // const requestBody = JSON.parse(event.body);
     // const { trial_days, lookupkey } = requestBody;
