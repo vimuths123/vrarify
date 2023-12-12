@@ -16,6 +16,14 @@ console.log('ddd')
 
 
 exports.handler = async (event, context) => {
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            url: 'ddd',
+        }),
+    };
+
     // const requestBody = JSON.parse(event.body);
     // const { trial_days, lookupkey } = requestBody;
 
@@ -23,6 +31,8 @@ exports.handler = async (event, context) => {
     //     lookup_keys: [lookupkey],
     //     expand: ['data.product'],
     // });
+
+
 
     // try {
     //     if (trial_days == 0) {
