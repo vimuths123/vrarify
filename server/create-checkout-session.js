@@ -9,6 +9,11 @@ const success_url = process.env.SUCCESS_URL;
 const cancel_url = process.env.SUCCESS_URL;
 const payment_options = process.env.PAYMENT_OPTIONS.split(',')
 
+console.log(stripe);
+console.log(success_url);
+console.log(payment_options);
+
+
 exports.handler = async (event, context) => {
     const requestBody = JSON.parse(event.body);
     const { trial_days, lookupkey } = requestBody;

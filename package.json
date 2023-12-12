@@ -15,10 +15,7 @@
     "saslprep": "^1.0.3",
     "shortid": "^2.2.16",
     "stripe": "^7.13.0",
-    "toastify-js": "^1.12.0",
-    "crypto": "^1.0.1",
-    "request": "^2.88.2",
-    "cors": "^2.8.5"
+    "toastify-js": "^1.12.0"
   },
   "scripts": {
     "dev": "nodemon server-off-netlify/api.js",
